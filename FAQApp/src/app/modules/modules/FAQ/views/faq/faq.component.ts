@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from "src/environments/environment";
 
 
 @Component({
@@ -20,13 +21,10 @@ export class FAQComponent implements OnInit {
   }
   
   getJsonData(){
-    this.http.get("http://localhost:5200/assets/files/faqs.json").subscribe(data =>{
+    this.http.get(environment.localEnvironment + "assets/files/faqs.json").subscribe(data =>{
       console.log(data);
       this.faqResults = data;
   });
 }
-
-  // should use the index to toggle between accordion
-  getAccordianToggle(){}
 
 }
