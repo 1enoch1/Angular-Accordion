@@ -1,0 +1,50 @@
+
+@import '/src/styles.sass'
+
+
+.accordionContainer
+    padding: 10px
+.accordion
+    background-color: var(--background-color)
+    color: var(--text-color)
+    cursor: pointer
+    padding: 25px !important
+    width: 100%
+    text-align: left
+    border: 1px solid
+    outline: none
+    transition: 0.4s
+    margin-top: 20px
+    font-family: var(--primary-font)
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .accordion:hover &
+        background-color: #a9a9a9 !important
+
+/* Style the accordion panel. Note: hidden by default */
+.panel
+    padding: 0 18px
+    background-color: white !important
+    display: none
+    overflow: hidden
+    margin: 10px !important
+
+.accordion:after
+    // content: '\02795'
+        font-size: 13px
+        color: #777
+        float: right
+        margin-left: 5px
+
+
+.active:after 
+    content: "\2796" 
+
+
+.plusIconContainer
+    width: 100px
+    height: 100px
+
+#plusIcon
+    background-image: url('/assets/logo.svg')
+

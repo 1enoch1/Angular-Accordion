@@ -1,4 +1,15 @@
 @font-face {
-    font-family: "oswald-bold";
-    src: url("oswald-bold.ttf") format("opentype");
-  }
+  font-family: "oswald-bold";
+  font-weight: 900;
+  src: url("oswald-bold.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "oswald-regular";
+  src: url("oswald-regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "oswald-light";
+  src: url("oswald-light.ttf") format("opentype");
+}

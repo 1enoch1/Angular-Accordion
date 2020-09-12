@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AccordianComponent } from './accordian.component';
+import { AccordianComponent } from './accordion.component';
 
 describe('AccordianComponent', () => {
   let component: AccordianComponent;
