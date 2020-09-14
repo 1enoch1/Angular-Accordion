@@ -1,11 +1,11 @@
 
 @import '/src/styles.sass'
 
-
 .accordionContainer
     padding: 10px
+
 .accordion
-    background-color: var(--background-color)
+    background-color: #eee
     color: var(--text-color)
     cursor: pointer
     padding: 25px !important
@@ -13,38 +13,46 @@
     text-align: left
     border: 1px solid
     outline: none
-    transition: 0.4s
-    margin-top: 20px
+    transition: 0.4s ease-in
+    margin-top: 0px
     font-family: var(--primary-font)
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .accordion:hover &
-        background-color: #a9a9a9 !important
+    .active, .accordion:hover
+        background-color: #ccc !important
 
 /* Style the accordion panel. Note: hidden by default */
 .panel
-    padding: 0 18px
-    background-color: white !important
+    padding: 18px
+    background-color: white
     display: none
     overflow: hidden
     margin: 10px !important
 
 .accordion:after
-    // content: '\02795'
-        font-size: 13px
-        color: #777
-        float: right
-        margin-left: 5px
+    font-size: 13px
+    color: #777
+    margin-left: 5px
 
 
-.active:after 
-    content: "\2796" 
+.active:after
+    //
+
 
 
 .plusIconContainer
-    width: 100px
-    height: 100px
+    float: right
+    height: 50%
+    padding: 5px !important
+    background-color: #fed230
 
-#plusIcon
-    background-image: url('/assets/logo.svg')
+
+
+// plus icon animations
+
+    // transform: translate3d(0, -20px, 0) rotate(-90deg);
+    // top:20px;
+
+    button:focus i 
+        animation: rotate 1s ease-in-out 0s rotate(30deg)
 
