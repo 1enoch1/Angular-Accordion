@@ -1,8 +1,13 @@
 
 @import '/src/styles.sass'
+\:host
+    width: 100%
+    display: flex
+    flex-direction: column
 
+    //accordion
 .accordionContainer
-    padding: 10px
+    padding: 1px
 
 .accordion
     background-color: #eee
@@ -16,20 +21,28 @@
     transition: 0.4s ease-in
     margin-top: 0px
     font-family: var(--primary-font)
+    margin-left: 10px
+    height: 85px
+
+    .accordionContent 
+        padding: 1rem
+        border: 1px solid green
+        margin: 1rem
+
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .accordion:hover
-        background-color: #ccc !important
+    .active, .accordion:hover, .accordion:focus
+        background-color: #a9a9a9 !important
 
 /* Style the accordion panel. Note: hidden by default */
 .panel
-    padding: 18px
+    padding: 25px
     background-color: white
     display: none
     overflow: hidden
     margin: 10px !important
 
-.accordion:after
+.panel:after
     font-size: 13px
     color: #777
     margin-left: 5px
@@ -39,20 +52,23 @@
     //
 
 
-
+// plus icon stylings
 .plusIconContainer
     float: right
     height: 50%
-    padding: 5px !important
+    padding: 8px !important
     background-color: #fed230
-
-
+    font-size: var(--font-sm)
 
 // plus icon animations
+.plusIconClosed
+    -ms-transform: rotate(0deg) /* IE 9 */
+    -webkit-transform: rotate(0deg) /* Safari */
+    transform: rotate(0deg)
+    transition-property: transform
 
-    // transform: translate3d(0, -20px, 0) rotate(-90deg);
-    // top:20px;
-
-    button:focus i 
-        animation: rotate 1s ease-in-out 0s rotate(30deg)
-
+.plusIconOpen
+    -ms-transform: rotate(45deg) /* IE 9 */
+    -webkit-transform: rotate(45deg) /* Safari */
+    transform: rotate(45deg)
+    transition-property: transform

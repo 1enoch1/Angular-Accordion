@@ -1,40 +1,17 @@
+
 <div class="accordionContainer">
-  <button class="accordion"  [ngClass]="{ 'active': isActive('One')}" (click)="setActive('One')">Section 1
-    <i class="plusIconContainer">
-      <svg class="svg-rotate__icon" width="20px" height="20px" viewBox="0 0 357 357">
-        <g id="add">
-          <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z"/>
-        </g>
-      </svg>
-    </i>
+  <button class="accordion"  (click)="toggleAccordion()">
+    <div>
+      <i  class="plusIconContainer" nz-icon [ngClass]="accordionOpened ? 'plusIconOpened' : 'plusIconClosed'">
+        <svg class="svg-rotate__icon" width="20px" height="20px" viewBox="0 0 357 357" [@animateIcon]="iconState">
+          <g id="add">
+            <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z" />
+          </g>
+        </svg>
+      </i>
+    </div>
   </button>
-
-  <div class="panel" *ngIf="isActive('One')" >
-    <p>Lorem ipsum...</p>
+  <div class="panel"  [@slideOpen]="animateAccordion">
+    <ng-content></ng-content>
   </div>
-
-  <button class="accordion"  [ngClass]="{ 'active': isActive('Two')}"  (click)="setActive('Two')">Section 2
-    <i class="plusIconContainer">
-      <svg class="svg-rotate__icon" width="20px" height="20px" viewBox="0 0 357 357">
-        <g id="add">
-          <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z"/>
-        </g>
-      </svg>
-    </i>
-  </button>
-  <div class="panel" *ngIf="isActive('Two')">
-    <p>Lorem ipsum...</p>
-  </div>
-  <button class="accordion" [ngClass]="{ 'active': isActive('Three')}" (click)="setActive('Three')">Section 3
-    <i class="plusIconContainer">
-      <svg class="svg-rotate__icon" width="20px" height="20px" viewBox="0 0 357 357">
-        <g id="add">
-          <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z"/>
-        </g>
-      </svg>
-    </i>
-  </button>
-  <div class="panel" *ngIf="isActive('Three')">
-    <p>Lorem ipsum...</p>
-  </div>
-</div>
+</div> 
