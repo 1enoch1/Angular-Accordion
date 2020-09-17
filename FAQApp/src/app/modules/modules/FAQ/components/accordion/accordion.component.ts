@@ -59,7 +59,7 @@ export class AccordionComponent implements OnInit, OnChanges {
   @Input() accordionState: boolean;
   @Input() forceAccordionOpen: boolean;
   @Output() currentAccordionState = new EventEmitter<boolean>();
-  @Output() toggle = new EventEmitter<any>();
+
 
   accordionOpened: boolean = true;
 
