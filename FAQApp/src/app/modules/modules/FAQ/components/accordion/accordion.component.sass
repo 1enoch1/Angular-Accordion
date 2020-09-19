@@ -1,56 +1,59 @@
 
 @import '/src/styles.sass'
 \:host
-    width: 100%
-    display: flex
-    flex-direction: column
+    max-width: 850px !important
+
 
     //accordion
-.accordionContainer
-    padding: 1px
-
 .accordion
-    background-color: #eee
+    background-color: #fff
     color: var(--text-color)
     cursor: pointer
-    padding: 25px !important
+    padding: 5px !important
     width: 100%
     text-align: left
-    border: 1px solid
+    border: 2px solid
     outline: none
     transition: 0.4s ease-in
     margin-top: 0px
     font-family: var(--primary-font)
     margin-left: 10px
     height: 85px
+    border-right: 0
+    border-left: 0
 
-    .accordionContent 
-        padding: 1rem
-        border: 1px solid green
-        margin: 1rem
+
+    .accordionHeader
+        display: flex
+        flex-direction: row
+    .accordionText
+        margin-left: 10px
+        display: flex
+        flex-direction: row
+        align-items: center
+        font-size: 18px
 
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    .active, .accordion:hover, .accordion:focus
-        background-color: #a9a9a9 !important
+    button:hover
+        color: #a9a9a9
 
 /* Style the accordion panel. Note: hidden by default */
 .panel
     padding: 25px
-    background-color: white
     display: none
     overflow: hidden
     margin: 10px !important
 
-.panel:after
-    font-size: 13px
-    color: #777
-    margin-left: 5px
 
-
-.active:after
-    //
-
+.panelHeaderLeft
+    display: flex !important
+    flex-direction: row !important
+    flex-grow: 1 !important
+    flex-basis: auto !important
+    align-items: center !important
+    justify-content: flex-start !important
+    
 
 // plus icon stylings
 .plusIconContainer
@@ -59,6 +62,7 @@
     padding: 8px !important
     background-color: #fed230
     font-size: var(--font-sm)
+    margin-top: 20px
 
 // plus icon animations
 .plusIconClosed

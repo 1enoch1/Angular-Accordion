@@ -1,14 +1,18 @@
 
-<div class="accordionContainer">
-  <button class="accordion"  (click)="toggleAccordion()">
+<div>
+  <button class="accordion" (click)="toggleAccordion()">
     <div>
-      <i  class="plusIconContainer" nz-icon [ngClass]="accordionOpened ? 'plusIconOpened' : 'plusIconClosed'">
+      <i class="plusIconContainer" nz-icon [ngClass]="isAccordionOpen ? 'plusIconOpened' : 'plusIconClosed'">
         <svg class="svg-rotate__icon" width="20px" height="20px" viewBox="0 0 357 357" [@animateIcon]="iconState">
           <g id="add">
             <path d="M357,204H204v153h-51V204H0v-51h153V0h51v153h153V204z" />
           </g>
         </svg>
       </i>
+      <div class="accordionHeader">
+        <h1>Q{{ index + 1}}</h1>
+        <p class="accordionText"> {{ question }} </p>
+      </div>
     </div>
   </button>
   <div class="panel"  [@slideOpen]="animateAccordion">

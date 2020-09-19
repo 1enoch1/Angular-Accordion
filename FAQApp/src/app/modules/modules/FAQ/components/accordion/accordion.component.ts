@@ -36,7 +36,7 @@ import {
           overflow: 'hidden',
           height: '*',
           padding: '0px 0px 20px 0px',
-          background: '#f1f1f1',
+          background: '#fff',
           margin: '10px',
           width: '100%'
         })
@@ -55,35 +55,38 @@ import {
 export class AccordionComponent implements OnInit, OnChanges {
   iconState: string = 'default';
   animateAccordion: string = 'out';
-
+  @Input() index: number = 0;
+  @Input() question: string;
+  @Input() answer: string;
   @Input() accordionState: boolean;
   @Input() forceAccordionOpen: boolean;
   @Output() currentAccordionState = new EventEmitter<boolean>();
 
 
-  accordionOpened: boolean = true;
+  isAccordionOpen: boolean = true;
 
 
   constructor() {}
 
   ngOnInit() {
-    this.accordionOpened = this.accordionState;
-    this.animateAccordion = this.accordionOpened ? 'in' : 'out';
+    this.isAccordionOpen = this.accordionState;
+    this.animateAccordion = this.isAccordionOpen ? 'in' : 'out';
     this.iconState = this.iconState === 'default' ? 'rotated' : 'default';
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['forceAccordionOpen']) {
-      this.accordionOpened = true;
-      this.animateAccordion = 'out';
-      this.currentAccordionState.emit(this.accordionOpened);
+      this.isAccordionOpen = true;
+      this.animateAccordion = 'in';
+      this.currentAccordionState.emit(this.isAccordionOpen);
     }
   }
 
   toggleAccordion() {
-    this.accordionOpened = !this.accordionOpened;
-    this.animateAccordion = this.accordionOpened ? 'in' : 'out';
+    this.isAccordionOpen = !this.isAccordionOpen;
+    this.animateAccordion = this.isAccordionOpen ? 'in' : 'out';
     this.iconState = this.iconState === 'default' ? 'rotated' : 'default';
-    this.currentAccordionState.emit(this.accordionOpened);
+    this.currentAccordionState.emit(this.isAccordionOpen);
   }
+
 }

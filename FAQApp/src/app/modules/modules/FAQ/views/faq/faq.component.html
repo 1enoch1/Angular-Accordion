@@ -1,10 +1,8 @@
-<!-- <div *ngFor="let result of faqResults | keyvalue">
-    <p>{{ result.value | json }}</p>
-</div> -->
-
 <div class="FaqHeader">
     <h2>{{ getFaqHeader() }}</h2>
 </div>
-<div>
-    <app-accordion style="display: flex; flex-direction: column;"></app-accordion>
-</div>
+<ng-container *ngFor="let result of faqResultList | keyvalue; let idx = index;">
+    <app-accordion [index]="idx" [question]="faqResultList[idx].question" [answer]="faqResultList[idx].answer">
+        <p>{{ faqResultList[idx].answer }}</p>
+    </app-accordion>
+</ng-container>
