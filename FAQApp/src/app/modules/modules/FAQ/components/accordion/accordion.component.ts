@@ -63,12 +63,13 @@ export class AccordionComponent implements OnInit, OnChanges {
   @Output() currentAccordionState = new EventEmitter<boolean>();
 
 
-  isAccordionOpen: boolean = true;
+  isAccordionOpen: boolean = false;
 
 
   constructor() {}
 
   ngOnInit() {
+    this.forceAccordionOpen = false;
     this.isAccordionOpen = this.accordionState;
     this.animateAccordion = this.isAccordionOpen ? 'in' : 'out';
     this.iconState = this.iconState === 'default' ? 'rotated' : 'default';

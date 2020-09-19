@@ -1,7 +1,7 @@
 
 @import '/src/styles.sass'
 \:host
-    max-width: 850px !important
+    max-width: 800px !important
 
 
     //accordion
@@ -22,37 +22,31 @@
     border-right: 0
     border-left: 0
 
-
     .accordionHeader
         display: flex
         flex-direction: row
+        margin-right: 20px !important
+
     .accordionText
         margin-left: 10px
-        display: flex
+        display: flex !important
         flex-direction: row
+        flex-grow: 1 
         align-items: center
-        font-size: 18px
+        font-size: 2vh
+        position: relative
 
-
-/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-    button:hover
+/* Add a background color to the button if it is clicked on , and when you move the mouse over it (hover) */
+    button:hover, button:active
         color: #a9a9a9
 
-/* Style the accordion panel. Note: hidden by default */
+// accordion panel stylings
 .panel
     padding: 25px
     display: none
     overflow: hidden
     margin: 10px !important
 
-
-.panelHeaderLeft
-    display: flex !important
-    flex-direction: row !important
-    flex-grow: 1 !important
-    flex-basis: auto !important
-    align-items: center !important
-    justify-content: flex-start !important
     
 
 // plus icon stylings
@@ -61,7 +55,7 @@
     height: 50%
     padding: 8px !important
     background-color: #fed230
-    font-size: var(--font-sm)
+    font-size: $font-sm
     margin-top: 20px
 
 // plus icon animations
