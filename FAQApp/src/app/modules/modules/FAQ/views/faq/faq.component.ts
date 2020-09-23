@@ -14,14 +14,12 @@ interface FaqResult {
   styleUrls: ['./faq.component.sass'],
 })
 export class FAQComponent implements OnInit {
-  //public faqResultList: {id: string, question: string, answer: string}[] = faqJson;
   faqResultList: FaqResult[] = (faqJson as any).default;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
     this.getJsonData();
-    console.log(this.faqResultList);
   }
 
   getJsonData() {

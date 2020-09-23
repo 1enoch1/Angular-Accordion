@@ -1,7 +1,7 @@
 
 @import '/src/styles.sass'
 \:host
-    max-width: 800px !important
+    min-height: 100% !important
 
 
     //accordion
@@ -21,24 +21,27 @@
     height: 85px
     border-right: 0
     border-left: 0
+.accordion:hover
+    background-color: #a9a9a9 !important
+    border: none !important
 
-    .accordionHeader
-        display: flex
-        flex-direction: row
-        margin-right: 20px !important
+.accordionHeader
+    display: flex
+    flex-direction: row
+    margin-left: 10px !important
 
-    .accordionText
-        margin-left: 10px
-        display: flex !important
-        flex-direction: row
-        flex-grow: 1 
-        align-items: center
-        font-size: 2vh
-        position: relative
+.accordionText
+    margin: 0px 30px 0px 30px
+    display: flex !important
+    flex-direction: row
+    flex-grow: 1
+    align-items: center
+    font-size: 2vh
+    position: relative
 
 /* Add a background color to the button if it is clicked on , and when you move the mouse over it (hover) */
-    button:hover, button:active
-        color: #a9a9a9
+    // .accordion:hover
+    //     background-color: #a9a9a9 !important
 
 // accordion panel stylings
 .panel
@@ -46,17 +49,21 @@
     display: none
     overflow: hidden
     margin: 10px !important
+    font-family: var(--primary-font)
 
     
 
 // plus icon stylings
 .plusIconContainer
     float: right
-    height: 50%
+    height: 3vh
     padding: 8px !important
     background-color: #fed230
     font-size: $font-sm
     margin-top: 20px
+    width: 3vh
+    text-align: center
+    margin-right: 10px
 
 // plus icon animations
 .plusIconClosed

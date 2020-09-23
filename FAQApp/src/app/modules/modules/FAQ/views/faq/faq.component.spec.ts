@@ -8,9 +8,8 @@ describe('FAQComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ FAQComponent ]
-    })
-    .compileComponents();
+      declarations: [FAQComponent],
+    }).compileComponents();
   });
 
   beforeEach(() => {
@@ -21,5 +20,14 @@ describe('FAQComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(FAQComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement;
+    expect(compiled.querySelector('.h1').textContent).toContain(
+      'HAVE A QUESTION? WE CAN HELP'
+    );
   });
 });

@@ -1,5 +1,5 @@
 <div class="FaqHeader">
-    <h2>{{ getFaqHeader() }}</h2>
+    <h1>{{ getFaqHeader() }}</h1>
 </div>
 <ng-container *ngFor="let result of faqResultList | keyvalue; let idx = index;">
     <app-accordion [index]="idx" [question]="faqResultList[idx].question" [answer]="faqResultList[idx].answer">

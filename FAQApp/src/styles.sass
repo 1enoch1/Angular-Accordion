@@ -16,14 +16,14 @@ $bold:700
 $black:900
 
 // font size
-$font-xs:1.5vw
+$font-xs: 1.5vw
 $font-sm: 2vh
-$primary-fs: 16px
-$font-md: 18px
-$font-lg: 25px
+$primary-fs: 2.5vh
+$font-md: 3vh
+$font-lg: 4vh
 
 // Main Body Stylings
-body
+html,body
     background-color: var(--background-color)
     color: var(--text-color)
     font-family: var(--primary-font)
@@ -31,11 +31,13 @@ body
     margin: 0
     font-weight: $regular
     justify-content: center
-    max-width: 800px
+    max-width: 100%
 
+h1
+    font-family: var(--secondary-font)
+    font-weight: $bold
 
-        //flex
-    .flexCenterLeft
-        display: flex !important
-        align-items: center !important
-        justify-content: flex-start !important
+p
+    text-align: left
+    font-size: $font-sm
+    margin: 10px

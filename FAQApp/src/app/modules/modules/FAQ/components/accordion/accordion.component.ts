@@ -36,9 +36,8 @@ import {
           overflow: 'hidden',
           height: '*',
           padding: '0px 0px 20px 0px',
-          background: '#fff',
-          margin: '10px',
-          width: '100%'
+          margin: '5px 20px 0px 15px',
+          width: '100%',
         })
       ),
       transition('in => out', animate('200ms ease-out')),
@@ -53,8 +52,8 @@ import {
   ],
 })
 export class AccordionComponent implements OnInit, OnChanges {
-  iconState: string = 'default';
-  animateAccordion: string = 'out';
+  iconState: string = 'rotate';
+  animateAccordion: string = 'in';
   @Input() index: number = 0;
   @Input() question: string;
   @Input() answer: string;
@@ -69,9 +68,9 @@ export class AccordionComponent implements OnInit, OnChanges {
   constructor() {}
 
   ngOnInit() {
-    this.forceAccordionOpen = false;
+    this.accordionState = false;
     this.isAccordionOpen = this.accordionState;
-    this.animateAccordion = this.isAccordionOpen ? 'in' : 'out';
+    this.animateAccordion = this.isAccordionOpen ? 'out' : 'in';
     this.iconState = this.iconState === 'default' ? 'rotated' : 'default';
   }
 
@@ -85,7 +84,7 @@ export class AccordionComponent implements OnInit, OnChanges {
 
   toggleAccordion() {
     this.isAccordionOpen = !this.isAccordionOpen;
-    this.animateAccordion = this.isAccordionOpen ? 'in' : 'out';
+    this.animateAccordion = this.isAccordionOpen ? 'out' : 'in';
     this.iconState = this.iconState === 'default' ? 'rotated' : 'default';
     this.currentAccordionState.emit(this.isAccordionOpen);
   }
